@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<div th:text="${session.M.name}"></div>
+<label th:text="${session.LM[0]}"></label>
+<hr>
+id=<label th:text="${session.LM[0].id}"></label><br>
+名字=<label th:text="${session.LM[0].name}"></label><br>
+地址=<label th:text="${session.LM[0].address}"></label><br>
+<hr>
+<table width=500 align=center border=1>
+	<tr>
+		<td>id
+		<td>姓名
+		<td>帳號
+		<td>密碼
+		<td>地址
+		<td>電話
+	<tr th:each="m:${session.LM}">
+		<td th:text="${m.id}">
+		<td th:text="${m.name}">
+		<td th:text="${m.username}">
+		<td th:text="${m.password}">
+		<td th:text="${m.address}">
+		<td th:text="${m.phone}">
+	<tr>
+		<td colspan=6 align=center>
+		<a href="/member/loginSuccess">上一頁</a>
+</table>
+</body>
+</html>
